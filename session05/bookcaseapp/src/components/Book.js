@@ -1,7 +1,30 @@
-import React from 'react';
+ import React from 'react';
 
-function Book() {
-  return "This is the output of a book component";
-}
+ function Book(props) {
+   console.log(props)
+ const { 
+   book: {
+    id,
+  // saleInfo: {retailPrice},
+    volumeInfo: {
+      title,
+      authors,
+      description,
+      imageLinks: {
+        thumbnail
+      }
+    }
+  }
+} = props;
 
-export default App;
+return (
+<div className="book">
+  <img src={props.book.volumeInfo.imageLinks.thumbnail} alt="thumbnail"/>
+  <div>
+    <h2 >{props.book.volumeInfo.title}</h2>
+  </div>
+</div>
+)}
+export default Book;
+
+
