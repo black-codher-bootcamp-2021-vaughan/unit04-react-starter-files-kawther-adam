@@ -5,13 +5,13 @@
  const { 
    book: {
     id,
-  // saleInfo: {retailPrice},
+     saleInfo: {retailPrice},
     volumeInfo: {
       title,
       authors,
       description,
       imageLinks: {
-        thumbnail
+      thumbnail
       }
     }
   }
@@ -22,6 +22,9 @@ return (
   <img src={props.book.volumeInfo.imageLinks.thumbnail} alt="thumbnail"/>
   <div>
     <h2 >{props.book.volumeInfo.title}</h2>
+    <p>{props.book.saleInfo.retailPrice ? props.book.saleInfo.retailPrice.amount : "0" }</p>
+    <p>{props.book.volumeInfo.description}</p>
+  
   </div>
 </div>
 )}
